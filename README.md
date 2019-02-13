@@ -1,5 +1,4 @@
-# mandelbrot
-Elixir mandelbrot generator
+# Elixir mandelbrot generator
 
 ![mandelbrot image](https://i.gyazo.com/2244a84e7d833c63b1017ffe8ecfb84b.png)
 

@@ -20,14 +20,41 @@ defmodule Mandel do
 	def row(0, _, _, _, res) do
 		res
 	end
-	
+	# All these if statements check if the current coordinate being checked is inside 1 of 4 pre-defined boxes or 1
+	# pre defined circle. If the coordinate is inside, then don't bother wasting time going through all the iterations
+	# since we know by definition that they will be inside the set anyway.
 	def row(width, height, trans, depth, res) do
 		coord = trans.(width, height)
-		#IO.puts("#{coord}")
-		#OPTIMIZE HERE
-		q = Brot.mandelbrot(coord, depth)
-		pixel = Color.convert(q, depth)
-		row(width-1, height, trans, depth, [pixel | res])
+		coordAbs = Cmplx.abs(coord)
+		{a,b} = coord
+		if(a>(-0.444) && a<(0.172) && b>(0.068) && b<(0.532)) do
+			#IO.puts(":a")
+			row(width-1, height, trans, depth, [{0,0,0} | res])
+		else
+		if(a>(-0.688) && a<(-0.064) && b>(-0.224) && b<(0.224)) do
+			#IO.puts(":b")
+			row(width-1, height, trans, depth, [{0,0,0} | res])
+		else
+		if(a>(-0.444) && a<(0.172) && b>(-0.532) && b<(-0.068)) do
+			#IO.puts(":c")
+			row(width-1, height, trans, depth, [{0,0,0} | res])
+		else
+		if(a>(-1.155) && a<(-0.85) && b>(-0.148) && b<(0.148)) do
+			#IO.puts(":d")
+			row(width-1, height, trans, depth, [{0,0,0} | res])
+		else
+		if(coordAbs < 0.24) do
+			#IO.puts(":d")
+			row(width-1, height, trans, depth, [{0,0,0} | res])
+		else
+			q = Brot.mandelbrot(coord, depth)
+			pixel = Color.convert(q, depth)
+			row(width-1, height, trans, depth, [pixel | res])
+		end
+		end
+		end
+		end
+		end
 	end
 	
 	

@@ -1,5 +1,6 @@
 defmodule Color do
-	def convertz(depth, max) do
+	# renaming red/2 to convert will change the generated images' colors
+	def red(depth, max) do
 		bop = (depth/max)*8
 		sec = Kernel.trunc(bop)
 		offset = 255*(bop-sec)

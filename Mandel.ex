@@ -43,7 +43,7 @@ defmodule Mandel do
 			#IO.puts(":d")
 			row(width-1, height, trans, depth, [{0,0,0} | res])
 		else
-		if(coordAbs < 0.24) do
+		if(coordAbs < 0.716 && a<(0.24) && b>(-0.5) && b<(0.5)) do
 			#IO.puts(":d")
 			row(width-1, height, trans, depth, [{0,0,0} | res])
 		else

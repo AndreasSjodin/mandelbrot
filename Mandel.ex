@@ -89,15 +89,6 @@ defmodule Mandel do
 		PPM.write("big.ppm", image)
 	end
 	
-	def n1920(x0, y0, xn, name) do
-		width = 1024
-		height = 720
-		depth = 256
-		k = (xn - x0)/width
-		image = mandelbrot(width, height, x0, y0, k, depth)
-		PPM.write(name, image)
-	end
-	
 	def custom(x0, y0, xn) do
 		width = 8700
 		height = 5000

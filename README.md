@@ -1,6 +1,8 @@
 # Elixir mandelbrot generator
 
-![mandelbrot image](https://i.gyazo.com/2244a84e7d833c63b1017ffe8ecfb84b.png)
+![mandelbrot image](https://i.gyazo.com/2244a84e7d833c63b1017ffe8ecfb84b.png)  
+
+More: https://imgur.com/a/Flqjh0T  
 
 Options for image size etc. are in Mandel.ex  
 Colors are in Color.ex  
